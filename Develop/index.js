@@ -41,7 +41,7 @@ inquirer.prompt([
         type: 'list-input',
         message: 'What is the license used in this project?',
         name: 'licence',
-        choices:['MIT','GPL','GNU','Apache','N/A']
+        choices: ['MIT', 'GPL', 'GNU', 'Apache', 'N/A']
     },
     {
         type: 'input',
@@ -56,23 +56,57 @@ inquirer.prompt([
 ])
 
 // TODO: Create a function to write README file
+fs.writeFile(`${userObject.title}ReadMe.md`, createReadMe(userObject))
 
-`   
+function createReadMe(userObject) {
+
+    return `
+    # ${userObject.title}
+    - [LICENSE](link to licence badge)
+
+
+    ## TABLE OF CONTENTS
+    -   [DESCRIPTION](#description)
+    -   [INSTALLATION](#installation)
+    -   [USAGE](#usage)
+    -   [CONTRIBUTING](#contributing)
+    -   [TEST](#test)
+    -   [LICENSE](#license)
+    -   [QUESTIONS](#question)
+
+
+    ##  DESCRIPTION
+    ${userObject.description}
+
+    ##  INSTALLATION
+    ${userObject.installation}
+
+    ##  USAGE
+    ${userObject.usage}
+
+    ## CONTRIBUTING
+    ${userObject.contributing}
+
+    ## TEST
+    ${userObject.test}
+
+    ## LICENSE
+    ${userObject.license}
+
+    ## QUESTIONS
+    To find how the application was made please see the link to my GitHub account 
+    ${userObject.question}
+    `
 }
 
-
-// Return the contents of 'data.csv' as a string in the variable "data"
-// "utf8" encodes the raw buffer data in human-readable format
-fs.readFile('data.csv', 'utf8', (error, data) =>
-  error ? console.error(error) : console.log(data)
 
 // TODO: Create a function to initialize app
-function init() {
-    const createReadMe = generateMarkDown()
+// function init() {
+//         const createReadMe = generateMarkDown()
 
-}
+//     }
 
 // Function call to initialize app
-init();
+// init();
 
 
