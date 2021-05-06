@@ -59,7 +59,13 @@ inquirer.prompt([
 ])
 
 // TODO: Create a function to write README file
-fs.writeFile(`${data.title}ReadMe.md`, generateMarkdown(data))
+fs.writeFile(`${data.title}ReadMe.md`, generateMarkdown(data), function(err){
+    if(err){
+        return console.log("Error Occured")
+    }else{
+        console.log(`successfully created ${data.title}ReadMe.md`)
+    }
+})
 
 
 // TODO: Create a function to initialize app
@@ -69,6 +75,6 @@ fs.writeFile(`${data.title}ReadMe.md`, generateMarkdown(data))
 //     }
 
 // Function call to initialize app
-// init();
+init();
 
 
