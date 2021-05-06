@@ -41,10 +41,10 @@ const questions = [
         name: 'test',
     },
     {
-        type: 'list',
+        type: 'list',//Ensure list was given
         message: 'What is the license used in this project?',
         name: 'licence',
-        choices: ['MIT', 'GPL', 'GNU', 'Apache', 'N/A']
+        choices: ['MIT', 'GNU GPL', 'Apache', 'N/A']
     },
     {
         type: 'input',
@@ -53,7 +53,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'What are additional information of reaching me for furher questions?',
+        message: 'What are additional information of reaching me for further questions?',
         name: 'aditionalQuestions',
     }
 ];
