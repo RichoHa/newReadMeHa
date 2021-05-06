@@ -64,7 +64,7 @@ function createReadMe(title, userInput){
         if(err){
             return console.log("Error Occured")
         }else{
-            console.log(`successfully created ${title}ReadMe.md`)
+            console.log(`successfully created ${title}`)
         }
     })
 }
@@ -73,7 +73,7 @@ function createReadMe(title, userInput){
 function init() {
     inquirer.prompt(questions)
     .then(function(userInput){
-        createReadMe(`${userInput.title}`, generateMarkdown(userInput))
+        createReadMe(`${userInput.title}ReadMe`, generateMarkdown(userInput))
     })   
 }
 
