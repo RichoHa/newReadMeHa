@@ -9,7 +9,7 @@ const generateMarkdown = require("./utils/generateMarkdown.js");
 
 
 // TODO: Create an array of questions for user input
-inquirer.prompt([
+const questions = [
     {
         type: 'input',
         message: 'What is the title of your project?',
@@ -55,24 +55,27 @@ inquirer.prompt([
         type: 'input',
         message: 'What are additional information of reaching me for furher questions?',
         name: 'aditionalQuestions',
-    },
-])
+    }
+];
 
 // TODO: Create a function to write README file
-fs.writeFile(`${data.title}ReadMe.md`, generateMarkdown(data), function(err){
-    if(err){
-        return console.log("Error Occured")
-    }else{
-        console.log(`successfully created ${data.title}ReadMe.md`)
-    }
-})
-
+function createReadMe(nameOfFile, userInput){
+    fs.writeFile(`${data.title}ReadMe.md`, generateMarkdown(data), function(err){
+        if(err){
+            return console.log("Error Occured")
+        }else{
+            console.log(`successfully created ${data.title}ReadMe.md`)
+        }
+    })
+}
 
 // TODO: Create a function to initialize app
-// function init() {
-//         const createReadMe = generateMarkDown()
-
-//     }
+function init() {
+    inquirer.prompt(questions)
+    .then(function(userInput){
+        createReadMe(`${questions[0].name}`, generateMarkdown(userInput))
+    })   
+}
 
 // Function call to initialize app
 init();
