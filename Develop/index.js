@@ -4,7 +4,7 @@
 const fs = require('fs');
 // inquirer is another Node standard library package for prompting users
 const inquirer = require("inquirer");
-// inquirer is another Node standard library package for prompting users
+// export fiel for structure function and licnece functions.
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
 
@@ -53,7 +53,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'What are additional information of reaching me for further questions?',
+        message: 'What are additional information of reaching me for further questions (Email Address)?',
         name: 'aditionalQuestions',
     }
 ];
@@ -73,10 +73,7 @@ function createReadMe(title, userInput){
 function init() {
     inquirer.prompt(questions)
     .then(function(userInput){
-
-
-
-        createReadMe(`${userInput.title}ReadMe`, generateMarkdown(userInput))
+    createReadMe(`${userInput.title}ReadMe`, generateMarkdown(userInput))
     })   
 }
 
