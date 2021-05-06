@@ -4,6 +4,9 @@
 This application allows users to generate a read me using Node.js.
 Application saves the readme file as the title. 
 
+## GitHub Repo for this project
+https://github.com/RichoHa/newReadMeHa
+
 ## Table of Contents
 -   Installation
 -   Usage
