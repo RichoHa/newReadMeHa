@@ -59,12 +59,12 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function createReadMe(nameOfFile, userInput){
-    fs.writeFile(`${userInput.title}ReadMe.md`, userInput, function(err){
+function createReadMe(title, userInput){
+    fs.writeFile(`${title}.md`, userInput, function(err){
         if(err){
             return console.log("Error Occured")
         }else{
-            console.log(`successfully created ${userInput.title}ReadMe.md`)
+            console.log(`successfully created ${title}ReadMe.md`)
         }
     })
 }
@@ -73,7 +73,7 @@ function createReadMe(nameOfFile, userInput){
 function init() {
     inquirer.prompt(questions)
     .then(function(userInput){
-        createReadMe(`${questions[0].name}`, generateMarkdown(userInput))
+        createReadMe(`${questions[0].name}ReadMe`, generateMarkdown(userInput))
     })   
 }
 
