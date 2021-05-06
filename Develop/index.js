@@ -73,7 +73,7 @@ function createReadMe(title, userInput){
 function init() {
     inquirer.prompt(questions)
     .then(function(userInput){
-        createReadMe(`${questions[0].name}ReadMe`, generateMarkdown(userInput))
+        createReadMe(`${userInput.title}ReadMe`, generateMarkdown(userInput))
     })   
 }
 
