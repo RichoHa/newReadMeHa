@@ -11,10 +11,10 @@ function renderLicenseLink(license) { }
 function renderLicenseSection(license) { }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
+function generateMarkdown(userInput) {
   return `
   
-  # ${data.title}
+  # ${userInput.title}
   - [LICENSE](link to licence badge)
 
 
@@ -29,26 +29,26 @@ function generateMarkdown(data) {
 
 
     ##  DESCRIPTION
-    ${data.description}
+    ${userInput.description}
 
     ##  INSTALLATION
-    ${data.installation}
+    ${userInput.installation}
 
     ##  USAGE
-    ${data.usage}
+    ${userInput.usage}
 
     ## CONTRIBUTING
-    ${data.contributing}
+    ${userInput.contributing}
 
     ## TEST
-    ${data.test}
+    ${userInput.test}
 
     ## LICENSE
-    ${data.license}
+    ${userInput.license}
 
     ## QUESTIONS
     To find how the application was made please see the link to my GitHub account 
-    ${data.question}
+    ${userInput.question}
 `;
 }
 
