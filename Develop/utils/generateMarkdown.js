@@ -14,7 +14,7 @@ function generateMarkdown(userInput) {
       licenselink= 'https://opensource.org/licenses/MIT'
       takeMetoLicense= `[License Section](#license)`
     } else if (userInput.license=="GNU GPL"){
-      licenseBadge = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0"
+      licenseBadge = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
       licenselink= 'https://www.gnu.org/licenses/gpl-3.0'
       takeMetoLicense= `[License Section](#license)`
     } else if (userInput.license=="Apache"){
