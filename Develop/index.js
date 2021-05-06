@@ -43,7 +43,7 @@ const questions = [
     {
         type: 'list',//Ensure list was given
         message: 'What is the license used in this project?',
-        name: 'licence',
+        name: 'license',
         choices: ['MIT', 'GNU GPL', 'Apache', 'N/A']
     },
     {
@@ -73,6 +73,9 @@ function createReadMe(title, userInput){
 function init() {
     inquirer.prompt(questions)
     .then(function(userInput){
+
+
+
         createReadMe(`${userInput.title}ReadMe`, generateMarkdown(userInput))
     })   
 }
