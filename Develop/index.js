@@ -60,11 +60,11 @@ const questions = [
 
 // TODO: Create a function to write README file
 function createReadMe(nameOfFile, userInput){
-    fs.writeFile(`${data.title}ReadMe.md`, generateMarkdown(data), function(err){
+    fs.writeFile(`${userInput.title}ReadMe.md`, userInput, function(err){
         if(err){
             return console.log("Error Occured")
         }else{
-            console.log(`successfully created ${data.title}ReadMe.md`)
+            console.log(`successfully created ${userInput.title}ReadMe.md`)
         }
     })
 }
